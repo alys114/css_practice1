@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>e-shop网上商城</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    body {
+      border: 1px solid gainsboro;
+      margin: 4px;
+      font-family: verdana, tahoma, sans-serif;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    /* begin - 标题栏 */
+
+    nav#top {
+      background-color: gainsboro;
+      height: 28px;
+      margin: 2px;
+      font-size: 0.9em;
+    }
+
+    #top ul {
+      overflow: hidden;
+      line-height: 28px;
+    }
+
+    ul li {
+      list-style-type: none;
+      float: left;
+    }
+
+    ul a {
+      text-decoration: none;
+      display: block;
+      padding: 0 10px;
+    }
+    ul a:hover{
+      background-color: gray;
+    }
+
+    #top a {
+      color: #000;
+    }
+
+    /* end - 标题栏 */
+
+    .inner {
+      width: 1024px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .outer {
+      width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .toolbar {
+      width: 100%;
+      height: 75px;
+    }
+
+    span {
+      text-weight: bold;
+      color: red;
+    }
+
+    #logo {
+      width: 300px;
+      text-align: right;
+      float: left;
+      margin-right: 40px;
+    }
+
+    /* b-搜索栏 */
+
+    #searchbar {
+      width: 400px;
+      height: 36px;
+      position: relative;
+      margin: 0.2em;
+      float: left;
+    }
+
+    #searchbutton {
+      width: 64px;
+      background-color: gainsboro;
+      border-style: none;
+      background-image: url('images/search_16px.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      left: 283px;
+      top: 0;
+      height: 34px;
+      border: 1px solid gray;
+    }
+
+    #searchbar #searchkey {
+      width: 280px;
+      height: 30px;
+      font-size: 1.1em;
+    }
+
+    #hotkey {
+      color: gray;
+      width: 280px;
+    }
+
+    /* e-搜索栏 */
+
+    #threecol {
+      width: 210px;
+      float: left;
+    }
+
+    #shoppingcar {
+      margin: 0.2em;
+      width: 160px;
+      height: 34px;
+      background-color: gainsboro;
+      border: 1px solid gray;
+      text-align: center;
+      line-height: 34px;
+    }
+
+    .menu {
+      background-color: #d4006a;
+      height: 36px;
+    }
+
+    .menu a {
+      color: #ffffff;
+      display: block;
+      padding: 0 10px;
+    }
+
+    .menu a:hover {
+      background-color: #ff007f;
+    }
+
+    .menu ul {
+      line-height: 36px;
+    }
+
+    .menuleft {
+      width: 240px;
+
+    }
+
+    .contentleft {
+      width: 240px;
+    }
+
+    .contentleft h3 {
+      /* margin: 10px; */
+      padding: 4px;
+    }
+
+    .contentleft ul {
+      overflow: hidden;
+      padding: 4px;
+      padding-bottom: 8px;
+    }
+
+    .contentleft a {
+      padding-right: 6px;
+      color: gray;
+
+    }
+
+    .box {
+      border: 1px solid gray;
+      box-shadow: 1px 1px #aaa;
+    }
+
+    .contentleft div+div {
+      border-top: none;
+    }
+
+    .contentleft .box-buttom {
+      margin-top: 20px;
+      border: 1px solid gray;
+      color: gray;
+    }
+
+    .condition {
+      margin: 10px;
+      padding: 0 10px;
+      border: 1px solid gray;
+      border-top: 2px solid red;
+    }
+
+    div#link {
+      margin: 10px;
+    }
+
+    .condition-left {
+      display: table-cell;
+      width: 120px;
+      text-align: right;
+      vertical-align: middle;
+    }
+
+    .condition-right {
+      display: table-cell;
+      padding-left: 20px;
+      vertical-align: middle;
+    }
+
+    .condition-right ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .condition-right ul li {
+      padding-right: 10px;
+    }
+
+    .condition-box {
+      margin: 0 auto;
+      /* margin-bottom: 10px; */
+      padding: 10px 0;
+      width: 880px;
+      border-bottom: 1px solid gray;
+    }
+
+    .condition-bottom {
+      border-bottom: 0;
+    }
+
+    .production {
+      margin: 10px;
+      padding: 0 10px;
+      border: 1px solid gray;
+      /* background-color: gainsboro; */
+    }
+
+    .production div {
+      display: table-cell;
+      vertical-align: middle;
+      height: 36px;
+    }
+
+    .production img {
+      height: 16px;
+      width: 12px;
+      margin: 6px;
+      vertical-align: middle;
+    }
+
+    .production #p_order_col2 {
+      width: 500px;
+    }
+
+    .production #p_order_col3 {
+      width: 160px;
+      text-align: right;
+      padding-right: 10px;
+      border-right: 1px solid gray;
+    }
+
+    .production #p_order_col4 {
+      width: 80px;
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    .production #p_order_col5 {
+      width: 60px;
+      text-align: center;
+    }
+
+    .production .linkbutton {
+      border: 1px solid gray;
+      background-color: gainsboro;
+      width: 16px;
+      height: 16px;
+      padding: 2px;
+    }
+
+    .p_content {
+      width: 880px;
+      margin: 10px;
+      padding: 0 10px;
+      border: 1px solid gray;
+    }
+
+    .p_content .p_line {
+      float: none;
+    }
+
+    .p_content .p_item {
+      width: 23%;
+      border: 1px solid red;
+      padding: 4px;
+      float: left;
+      margin: 3px;
+      text-align: center;
+    }
+
+    .p_content img {
+      width: 180px;
+      height: 160px;
+      overflow: hidden;
+      border: 1px solid gray;
+    }
+
+    .p_content .p_item figcaption {
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    .p_content .p_price {
+      margin-top: 10px;
+    }
+
+    .p_content .p_price strong {
+      color: red;
+      /* font-size: 1.1em; */
+    }
+
+    .p_content .p_price {
+      float: left;
+    }
+
+    .p_content .p_price div {
+      /* display: table-cell;
+      text-align: center;
+      vertical-align: middle; */
+      float: left;
+    }
+
+    .p_content .p_price div a {
+      text-decoration: none;
+      display: block;
+    }
+
+    .p_content .p_price .but_reduce,
+    .but_add {
+      border: 1px solid gray;
+      width: 20px;
+      height: 22px;
+      margin: 0 2px;
+      line-height: 22px;
+
+    }
+
+    .p_content .p_price .wrap_input input {
+      width: 30px;
+      height: 18px;
+    }
+
+    .p_content .p_price .but_buy {
+      width: 30px;
+      background-color: red;
+      color: #ffffff;
+      height: 24px;
+      line-height: 24px;
+      margin: 0 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav id="top">
+      <div class="outer">
+        <ul class="left">
+          <li><a href="#">收藏本站</a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="#">登录</a></li>
+          <li><a href="#">注册</a></li>
+          <li><a href="#">我的订单</a></li>
+          <li><a href="#">我的收藏</a></li>
+          <li><a href="#">VIP会员俱乐部</a></li>
+          <li><a href="#">客户服务</a></li>
+          <li><a href="#">关注</a></li>
+          <li><a href="#">手机版</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="toolbar">
+      <div class="inner">
+        <div id="logo"><img src="images/logo.jpg" title="logo"></div>
+        <div id="searchbar">
+          <input type="text" id="searchkey">
+          <input type="button" id="searchbutton" value="   ">
+          <div id="hotkey">热门搜索：火龙果 瓜子</div>
+        </div>
+        <!-- 购物车 -->
+        <div id="threecol">
+          <div id="shoppingcar">购物车<span> 2 </span>件</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <!-- 中间内容部分 -->
+  <div>
+    <div class="menu">
+      <div class="outer">
+        <nav class="menuleft left">
+          <ul>
+            <li><a href="#">全部商品分类</a></li>
+          </ul>
+        </nav>
+        <nav class="left">
+          <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">网上超市</a></li>
+            <li><a href="#">水果超市</a></li>
+            <li><a href="#">超级订餐</a></li>
+            <li><a href="#">生活娱乐</a></li>
+            <li><a href="#">研究院</a></li>
+          </ul>
+        </nav>
+        <nav class="right">
+          <ul>
+            <li><a href="#">研究院</a></li>
+            <li><a href="#">研究院</a></li>
+            <li><a href="#">论坛</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div id="pg-content">
+      <div class="outer">
+        <!-- 左边内容菜单 -->
+        <aside class="contentleft left">
+          <div class="box">
+            <h3>南方水果</h3>
+            <ul>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <div class="box">
+            <h3>南方水果</h3>
+            <ul>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <div class="box">
+            <h3>南方水果</h3>
+            <ul>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <div class="box">
+            <h3>南方水果</h3>
+            <ul>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+              <li><a href="#">火龙果</a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <div class="box-buttom">
+            <h3>热销排行榜</h3>
+
+            <div class="clear"></div>
+          </div>
+          <!-- <div class="clear"></div> -->
+        </aside>
+        <!-- 右边内容页 -->
+        <article class="left">
+          <div id="link">福特&gt;蒙迪欧&gt;2.0T</div>
+          <div class="condition">
+            <div class="condition-box">
+              <div class="condition-left"><strong>您已选择：</strong></div>
+              <div class="condition-right">苹果</div>
+            </div>
+            <div class="condition-box">
+              <div class="condition-left"><strong>材料：</strong></div>
+              <div class="condition-right">
+                <ul>
+                  <li>苹果</li>
+                  <li>苹果</li>
+                  <li>苹果</li>
+                </ul>
+              </div>
+            </div>
+            <div class="condition-box">
+              <div class="condition-left"><strong>风格：</strong></div>
+              <div class="condition-right">
+                <ul>
+                  <li>苹果</li>
+                  <li>苹果</li>
+                  <li>苹果</li>
+                </ul>
+              </div>
+            </div>
+            <div class="condition-box condition-bottom">
+              <div class="condition-left"><strong>品牌：</strong></div>
+              <div class="condition-right">
+                <ul>
+                  <li>苹果</li>
+                  <li>苹果</li>
+                  <li>苹果</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="production">
+            <div id="p_order">
+              <div id="p_order_col1">排序:</div>
+              <div id="p_order_col2">
+                <ul>
+                  <li><a href="#">价格<img src="images/arrowdown.png"></a></li>
+                  <li><a href="#">销量<img src="images/arrowdown.png"></a></li>
+                  <li><a href="#">最新<img src="images/arrowup.png"></a></li>
+                </ul>
+              </div>
+              <div id="p_order_col3"><span>共xxx件商品</span></div>
+              <div id="p_order_col4"><span> 1 </span>/654</div>
+              <div id="p_order_col5">
+                <div class="linkbutton">&lt;</div>
+                <div class="linkbutton">&gt;</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="p_content">
+            <div class="p_line">
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="p_line">
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div>
+                    <div class="but_reduce"><a href="#">-</a></div>
+                    <div class="wrap_input"><input type="text" value="1"></div>
+                    <div class="but_add"><a href="#">+</a></div>
+                    <div>
+                      <div class="but_buy"><a href="#">买</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p_line">
+              <div class="p_item">
+                <figure>
+                  <img src="images/no_image.jpg" title="production images">
+                  <figcaption>
+                    欧凯龙 景德镇骨瓷
+                  </figcaption>
+                </figure>
+                <div class="p_price">
+                  <div><strong>￥69.00</strong></div>
+                  <div class="but_reduce"><a href="#">-</a></div>
+                  <div class="wrap_input"><input type="text" value="1"></div>
+                  <div class="but_add"><a href="#">+</a></div>
+                  <div class="but_buy"><a href="#">买</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  </footer>
+</body>
+
+</html>
